@@ -8,14 +8,13 @@ import android.view.View
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
-import android.widget.ProgressBar
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.UTAMU.R
 import com.example.UTAMU.WalkThrough.WalkThrough
 
 class SplashScreen : AppCompatActivity() {
-    var progressBar: ProgressBar? = null
+
     var progressStatus = 0
     var handler = Handler()
     @RequiresApi(Build.VERSION_CODES.KITKAT)

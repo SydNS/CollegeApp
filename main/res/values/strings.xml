@@ -68,6 +68,7 @@
     <string name="todo">TODO</string>
     <string name="run_volley">Run Volley</string>
     <string name="string_img1text2">string/img1text2</string>
+    <string name="text_splashscreen">text_splashscreen</string>
 
 
 </resources>
