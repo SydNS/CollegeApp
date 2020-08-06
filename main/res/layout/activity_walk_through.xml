@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WalkThrough.WalkThrough">
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/walkthroughvp"
+        android:layout_width="313dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="90dp"
+        android:layout_centerHorizontal="true"
+        android:clipToPadding="@dimen/ctp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
+    <RelativeLayout
+        android:id="@+id/skipstartlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/walkthroughvp"
+        android:layout_marginTop="5dp">
+        <Button
+            android:fontFamily="cursive"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:text="next"
+            android:id="@+id/nextbutton"
+            android:background="@drawable/skipbutton"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            android:fontFamily="cursive"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:text="start"
+            android:visibility="invisible"
+            android:id="@+id/startbutton"
+            android:background="@drawable/skipbutton"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:text="skip"
+        android:id="@+id/skipbutton"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/skipstartlayout"
+        android:layout_marginTop="20dp"/>
+</RelativeLayout>

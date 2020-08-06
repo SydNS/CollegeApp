@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mynav"
+    app:startDestination="@id/mainActivity">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.UTAMU.Activities.HomeActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" >
+        <action
+            android:id="@+id/action_mainActivity_to_second"
+            app:destination="@id/second"
+            app:popUpTo="@id/mainActivity" />
+    </activity>
+    <activity
+        android:id="@+id/second"
+        android:name="com.example.UTAMU.Activities.Second"
+        android:label="activity_second"
+        tools:layout="@layout/activity_second" />
+</navigation>

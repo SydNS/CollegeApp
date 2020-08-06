@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="520dp"
+    android:elevation="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/img1"
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+
+            <ImageView
+                android:background="@drawable/et4"
+                style="@style/WalkhtroughPageImages"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_below="@+id/img1">
+            <TextView
+                android:id="@+id/page1text"
+                android:text="@string/img2"
+                style="@style/WalkhtroughPageTitle"/>
+            <TextView
+                android:id="@+id/page1text2"
+                android:layout_below="@id/page1text"
+                android:text="string/img2text2"
+                style="@style/WalkhtroughPageDesc"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+

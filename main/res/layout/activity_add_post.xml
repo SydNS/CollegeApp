@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardText">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/postauthorlayout"
+        style="@style/AddingPosts"
+        android:hint="Author">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/posttitlelayout"
+        style="@style/AddingPosts"
+        android:layout_below="@id/postauthorlayout"
+        android:hint="Title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/postsubtitlelayout"
+        style="@style/AddingPosts"
+        android:hint="Subtitle"
+        android:layout_below="@id/posttitlelayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/postpostlayout"
+        style="@style/AddingPosts"
+        android:hint="Post"
+        android:layout_below="@id/postsubtitlelayout"
+        android:layout_height="150dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+    <Button
+        android:id="@+id/sendpost"
+        android:layout_below="@id/postpostlayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:background="@drawable/buttonbackground"
+        android:text="@string/send"
+        android:textColor="@color/cardWhite" />
+
+
+</RelativeLayout>

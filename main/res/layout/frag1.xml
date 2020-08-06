@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    tools:openDrawer="start">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/frag1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/searchbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <Toolbar
+                android:id="@+id/toolbarfrag1"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/colorWhite"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/exitButton"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:background="@drawable/back_foreground" />
+
+                    <androidx.appcompat.widget.SearchView
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/searchbg"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="25dp" />
+
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/plus_foreground" />
+                </RelativeLayout>
+
+            </Toolbar>
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="bottom"
+                android:background="@color/colorWhite"
+                app:tabTextColor="@color/colorBlack" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/searchbar"
+            android:layout_alignParentBottom="true"
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/itemDisplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_below="@id/searchbar"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="1dp">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/itemDisplayRCV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="2dp"
+                        android:background="@color/colorWhite"
+                        android:orientation="horizontal" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/features"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_below="@id/itemDisplay"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/colorWhite"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/featuresdesc"
+                        android:layout_width="170dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="5dp"
+                        android:background="@color/colorBlack"
+                        android:padding="2dp"
+                        android:text="@string/featuresGot"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="35dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@id/featuresdesc">
+
+                        <AdapterViewFlipper
+                            android:id="@+id/featuresAdapterViewFlipper"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:ignore="DuplicateIds" />
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_below="@id/features">
+
+                    <TextView
+                        android:id="@+id/titlemostv"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/colorBlack"
+                        android:gravity="center"
+                        android:text="Most Viewed Posting"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="30dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcvschools"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/titlemostv"
+                        android:layout_margin="3dp"
+                        android:padding="3dp" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:id="@+id/nav_view"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="start"-->
+<!--        app:headerLayout="@layout/nav_header"-->
+<!--        app:menu="@menu/nav_profile" />-->
+
+</RelativeLayout>

@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">UTAMU</string>
+    <string name="send">Add Post</string>
+    <string name="welcome">Welcome</string>
+    <string name="signin">Sign In</string>
+    <string name="signup">Sign Up</string>
+    <string name="password">Password</string>
+    <string name="username">username</string>
+    <string name="username1">username</string>
+    <string name="username2">lastname</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="residence">Residence</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="signup_with_facebook">Signup With Facebook</string>
+    <string name="signup_with_gmail">Sign Up With Gmail</string>
+    <string name="note"><![CDATA[By Creating an Accout you\'re agreeing to our Terms & Conditions]]></string>
+    <string name="rememberme">Remember Me</string>
+
+    <!--Catageories for classifying users-->
+    <string name="Categories">categories</string>
+    <string name="categoryProfession">profession</string>
+    <string name="categorySchool">school</string>
+    <string name="categoryLevel">level</string>
+
+    <string-array name="levels">
+        <item>primary</item>
+        <item>o-level</item>
+        <item>a-level</item>
+    </string-array>
+    <string-array name="lsubjectcategories">
+        <item>Arts</item>
+        <item>Sciences</item>
+    </string-array>
+    <string name="Subjects">Subjects</string>
+    <string name="CategoriesSubjectEnglish">English</string>
+    <string name="CategoriesSubjectMath">Maths</string>
+    <string name="CategoriesSubjectSST">SST</string>
+    <string name="CategoriesSubjectGeog">Geography</string>
+    <string name="CategoriesSubjectPhysics">Physics</string>
+    <string name="CategoriesSubjectLiterature">Literature</string>
+    <string name="CategoriesSubjectHistory">History</string>
+    <string name="TermsandConditions">terms and conditions</string>
+
+    <string name="TypeOfAccount">Level</string>
+    <string name="SecondaryLevel">Secondary</string>
+    <string name="PrimaryLevel">Primary</string>
+    <string name="TutorLevel">Tutor</string>
+
+
+    <string name="img1">get to learn in comfort</string>
+    <string name="img2">genius 1% aspiration</string>
+    <string name="img3">and 99% perspiration</string>
+    <string name="img4">easy to say </string>
+
+    <string name="featuresGot">All The Features We Got</string>
+    <string name="anotherone">another one</string>
+
+
+</resources>
