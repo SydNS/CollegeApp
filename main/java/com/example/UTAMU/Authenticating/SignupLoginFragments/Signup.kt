@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.UTAMU.Authenticating.SignupLoginFragments
 
 
@@ -6,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
@@ -19,10 +20,9 @@ import com.android.volley.toolbox.Volley
 import com.example.UTAMU.R
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.textfield.TextInputLayout
-import kotlinx.android.synthetic.main.signup.*
 import org.json.JSONException
 import org.json.JSONObject
-import java.lang.Thread.sleep
+
 
 class Signup : Fragment() {
 
@@ -33,7 +33,6 @@ class Signup : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.signup, container, false)
-
         val signup_uname = view.findViewById<View>(R.id.signup_uname) as TextInputLayout
         val signup_uname2 = view.findViewById<View>(R.id.signup_uname2) as TextInputLayout
         val signup_uemail = view.findViewById<View>(R.id.signup_uemail) as TextInputLayout
@@ -43,6 +42,7 @@ class Signup : Fragment() {
 
         val signupButton = view.findViewById<View>(R.id.signupButton) as Button
         signupButton.setOnClickListener {
+
 
             val firstname = signup_uname.editText!!.text.toString()
             val lastname = signup_uname2.editText!!.text.toString()
@@ -54,31 +54,16 @@ class Signup : Fragment() {
             if (firstname.isNotEmpty() and lastname.isNotEmpty() and residence.isNotEmpty() and upassd.isNotEmpty() and upassd2.isNotEmpty() and uemail.isNotEmpty()) {
                 if (upassd == upassd2) {
                     posting(firstname, lastname, uemail, residence, upassd, upassd2)
-                    progresDisplay(pgbar)
+
                 } else {
                     Toast.makeText(activity, "Passwords dont match", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 Toast.makeText(activity, "Fill in All the Fields", Toast.LENGTH_SHORT).show()
             }
+
         }
         return view
-    }
-
-    private fun progresDisplay(pgbar: ProgressBar) {
-
-        val thread = Thread {
-            for (i: Int in 0..100 step 10) {
-                try {
-                    sleep(1000)
-                } catch (e: InterruptedException) {
-                    e.printStackTrace()
-                }
-                pgbar.progress = i
-
-            }
-        }
-        thread.start()
     }
 
 
@@ -114,7 +99,13 @@ class Signup : Fragment() {
                 ROOT_URL_POST,
                 parameters,
                 Response.Listener { response ->
-                    Toast.makeText(activity, response.toString(), Toast.LENGTH_LONG).show()
+                    val fname: String = response.get("firstname") as String
+                    val lname: String = response.get("lastname") as String
+                    Toast.makeText(
+                        activity,
+                        "Hey $lname $fname You're Most Welcome ",
+                        Toast.LENGTH_LONG
+                    ).show()
                     tabLayout.setScrollPosition(0, 0F, true)
                     viewPager.currentItem = 0
                 },
