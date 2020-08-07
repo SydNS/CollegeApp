@@ -2,7 +2,6 @@ package com.example.UTAMU.Activities
 
 import android.os.Bundle
 import android.view.View
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.UTAMU.FragmentsJavaClasses.ForTheBottomNav.FirstFragment
@@ -26,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
         setTitle(R.string.app_name)
         bottomNavigationView =
             findViewById<View>(R.id.bottomnavmenu) as BottomNavigationView
-        bottomNavigationView!!.setOnNavigationItemSelectedListener { item ->
+        bottomNavigationView?.setOnNavigationItemSelectedListener { item ->
             var selectedFragment: Fragment? = null
             when (item.itemId) {
                 R.id.bnhome -> selectedFragment = FirstFragment()

@@ -2,126 +2,133 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signuplayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardWhite"
-    android:id="@+id/signuplayout">
-
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signup_uname"
-        style="@style/makingPoststyle"
-        android:hint="@string/username1">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+    android:background="@color/cardWhite">
 
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signup_uname2"
-        style="@style/makingPoststyle"
-        android:layout_below="@id/signup_uname"
-        android:hint="@string/username2">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signup_uemail"
-        style="@style/makingPoststyle"
-        android:layout_below="@id/signup_uname2"
-        android:hint="@string/email">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signup_upassword1"
-        style="@style/makingPoststyle"
-        android:layout_below="@id/signup_uemail"
-        android:hint="@string/password"
-        app:passwordToggleEnabled="true">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signup_upassword2"
-        style="@style/makingPoststyle"
-        android:layout_below="@id/signup_upassword1"
-        android:hint="@string/confirmpassword"
-        app:passwordToggleEnabled="true">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textPassword"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signup_residence"
-        style="@style/makingPoststyle"
-        android:layout_below="@id/signup_upassword2"
-        android:hint="@string/residence">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="text"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-    <Button
-        android:id="@+id/signupButton"
-        android:layout_below="@id/signup_residence"
-        style="@style/MyButtons"
-        android:background="@drawable/buttonbackground"
-        android:text="@string/signup"/>
     <RelativeLayout
-        android:id="@+id/holder"
-        style="@style/HolderOfSocialMedia"
-        tools:ignore="NotSibling">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/pgbar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:visibility="gone" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_uname"
+            style="@style/makingPoststyle"
+            android:hint="@string/username1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_uname2"
+            style="@style/makingPoststyle"
+            android:layout_below="@id/signup_uname"
+            android:hint="@string/username2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_uemail"
+            style="@style/makingPoststyle"
+            android:layout_below="@id/signup_uname2"
+            android:hint="@string/email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_upassword1"
+            style="@style/makingPoststyle"
+            android:layout_below="@id/signup_uemail"
+            android:hint="@string/password"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_upassword2"
+            style="@style/makingPoststyle"
+            android:layout_below="@id/signup_upassword1"
+            android:hint="@string/confirmpassword"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_residence"
+            style="@style/makingPoststyle"
+            android:layout_below="@id/signup_upassword2"
+            android:hint="@string/residence">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <Button
-            android:id="@+id/signup_with_facebook"
-            style="@style/MyButtonSocialMediaFacebook"/>
+            android:id="@+id/signupButton"
+            style="@style/MyButtons"
+            android:layout_below="@id/signup_residence"
+            android:background="@drawable/buttonbackground"
+            android:text="@string/signup" />
 
-        <Button
-            android:id="@+id/signup_with_Gmail"
-            style="@style/MyButtonSocialMediaGmail"/>
+        <RelativeLayout
+            android:id="@+id/holder"
+            style="@style/HolderOfSocialMedia"
+            tools:ignore="NotSibling">
+
+            <Button
+                android:id="@+id/signup_with_facebook"
+                style="@style/MyButtonSocialMediaFacebook" />
+
+            <Button
+                android:id="@+id/signup_with_Gmail"
+                style="@style/MyButtonSocialMediaGmail" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/holder"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/note"
+            android:textSize="15sp" />
+
     </RelativeLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/holder"
-        android:layout_centerHorizontal="true"
-        android:text="@string/note"
-        android:textSize="15sp"
-        android:gravity="center"/>
-
-</RelativeLayout>
 </ScrollView>
