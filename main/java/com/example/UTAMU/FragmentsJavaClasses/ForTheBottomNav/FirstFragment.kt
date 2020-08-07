@@ -1,7 +1,6 @@
 package com.example.UTAMU.FragmentsJavaClasses.ForTheBottomNav
 
 import android.content.Context
-import android.net.sip.SipAudioCall
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterViewFlipper
 import android.widget.Button
-import android.widget.Toast
 import android.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -56,21 +54,12 @@ class FirstFragment : Fragment() {
         itemDisplay.layoutManager = layoutManager
         val itemAnimator: ItemAnimator = DefaultItemAnimator()
         itemDisplay.itemAnimator = itemAnimator
-//        if (rcvForHorizontalDisplay != null) {
-//            rcvForHorizontalDisplay.setListener(object : SipAudioCall.Listener() {
-//                fun onClick(position: Int) {
-//                    Toast.makeText(context, "heya its done", Toast.LENGTH_LONG).show()
-//                    childFragmentManager.beginTransaction().replace(R.id.frag1, SecondFragment())
-//                }
-//            })
-//        }
-
 
 //AdapterViewFlipper's code is below this comment
         val slides =
             intArrayOf(R.layout.page1, R.layout.page2, R.layout.page3, R.layout.page4)
         var mcontext: Context
-          val imageListFoAdapterView = intArrayOf(
+        val imageListFoAdapterView = intArrayOf(
             R.drawable.asui61,
             R.drawable.asui61,
             R.drawable.asui61,
@@ -79,17 +68,17 @@ class FirstFragment : Fragment() {
             R.drawable.asui61,
             R.drawable.asui61
         )
-//        val adapterViewFlipper =
-//            view.findViewById<AdapterViewFlipper>(R.id.featuresAdapterViewFlipper)
-//        adapterViewFlipper.adapter = activity?.let {
-//            MyAdapterViewFlippper(
-//                it,
-//                nameList,
-//                imageListFoAdapterView
-//            )
-//        }
-//        adapterViewFlipper.isAutoStart = true
-//        adapterViewFlipper.flipInterval = 5000
+        val adapterViewFlipper =
+            view.findViewById<AdapterViewFlipper>(R.id.featuresAdapterViewFlipper)
+        adapterViewFlipper.adapter = activity?.let {
+            MyAdapterViewFlippper(
+                it,
+                nameList,
+                imageListFoAdapterView
+            )
+        }
+        adapterViewFlipper.isAutoStart = true
+        adapterViewFlipper.flipInterval = 5000
 
         //school recycler view dets
         val mostViewedArrayList: ArrayList<MostViewed> = ArrayList<MostViewed>()

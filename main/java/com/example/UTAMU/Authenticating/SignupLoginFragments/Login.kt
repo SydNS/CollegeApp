@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.android.volley.NoConnectionError
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -75,9 +76,18 @@ class Login : Fragment() {
                         e.printStackTrace()
                     }
                 },
-                Response.ErrorListener {
-                    Toast.makeText(activity, "Invalid Credentials", Toast.LENGTH_SHORT)
-                        .show()
+                Response.ErrorListener { error ->
+                    when (error) {
+                        is NoConnectionError -> Toast.makeText(
+                            activity,
+                            error.toString(),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        else -> Toast.makeText(activity, error.toString(), Toast.LENGTH_SHORT)
+                            .show()
+                    }
+
+
                 })
 
         requestQueue.add(jsonObjReq)
