@@ -55,6 +55,7 @@
 
     <string name="featuresGot">All The Features We Got</string>
     <string name="anotherone">another one</string>
+    <string name="descIcon">App-Icon</string>
 
 
 </resources>

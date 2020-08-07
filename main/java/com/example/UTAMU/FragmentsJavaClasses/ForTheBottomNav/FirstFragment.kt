@@ -1,25 +1,20 @@
 package com.example.UTAMU.FragmentsJavaClasses.ForTheBottomNav
 
-import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterViewFlipper
-import android.widget.Button
-import android.widget.Toolbar
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ItemAnimator
 import com.example.UTAMU.AdaptersJavaClasses.MostViewedAdapter
 import com.example.UTAMU.AdaptersJavaClasses.MyAdapterViewFlippper
 import com.example.UTAMU.AdaptersJavaClasses.RCVForHorizontalDisplay
 import com.example.UTAMU.DataObjects.MostViewed
 import com.example.UTAMU.R
+import kotlinx.android.synthetic.main.frag1.*
+import kotlinx.android.synthetic.main.frag1.view.*
 import java.util.*
 
 class FirstFragment : Fragment() {
@@ -29,14 +24,12 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.frag1, container, false)
-        val layoutManager =
-            LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-        val exitting =
-            view.findViewById<View>(R.id.exitButton) as Button
-        val itemDisplay =
-            view.findViewById<View>(R.id.itemDisplayRCV) as RecyclerView
-        val schoolDisplay =
-            view.findViewById<View>(R.id.rcvschools) as RecyclerView
+        val layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            activity!!.setActionBar(toolbarfrag1)
+        }
+
         val imageList = intArrayOf(
             R.drawable.astudio21,
             R.drawable.astudio52,
@@ -46,19 +39,16 @@ class FirstFragment : Fragment() {
             R.drawable.astudio49,
             R.drawable.astudio49
         )
-        val nameList =
-            arrayOf("syd", "edge", "java", "major", "edge", "java", "major")
+        val nameList = arrayOf("syd", "edge", "java", "major", "edge", "java", "major")
         val rcvForHorizontalDisplay =
             activity?.let { RCVForHorizontalDisplay(it, imageList, nameList) }
-        itemDisplay.adapter = rcvForHorizontalDisplay
-        itemDisplay.layoutManager = layoutManager
-        val itemAnimator: ItemAnimator = DefaultItemAnimator()
-        itemDisplay.itemAnimator = itemAnimator
+
+        val itemDisplayRCV: RecyclerView = view.findViewById(R.id.itemDisplayRCV)
+        itemDisplayRCV.adapter = rcvForHorizontalDisplay
+        itemDisplayRCV.layoutManager = layoutManager
 
 //AdapterViewFlipper's code is below this comment
-        val slides =
-            intArrayOf(R.layout.page1, R.layout.page2, R.layout.page3, R.layout.page4)
-        var mcontext: Context
+//        val featuresAdapterViewFlipper:AdapterViewFlipper=view.findViewById(R.id.featuresAdapterViewFlipper)
         val imageListFoAdapterView = intArrayOf(
             R.drawable.asui61,
             R.drawable.asui61,
@@ -68,19 +58,17 @@ class FirstFragment : Fragment() {
             R.drawable.asui61,
             R.drawable.asui61
         )
-        val adapterViewFlipper =
-            view.findViewById<AdapterViewFlipper>(R.id.featuresAdapterViewFlipper)
-        adapterViewFlipper.adapter = activity?.let {
+        view.featuresAdapterViewFlipper?.adapter = activity?.let {
             MyAdapterViewFlippper(
                 it,
                 nameList,
                 imageListFoAdapterView
             )
         }
-        adapterViewFlipper.isAutoStart = true
-        adapterViewFlipper.flipInterval = 5000
+        view.featuresAdapterViewFlipper?.isAutoStart = true
+        view.featuresAdapterViewFlipper?.flipInterval = 5000
 
-        //school recycler view dets
+//school recycler view dets
         val mostViewedArrayList: ArrayList<MostViewed> = ArrayList<MostViewed>()
         mostViewedArrayList.add(
             MostViewed(
@@ -148,19 +136,11 @@ class FirstFragment : Fragment() {
         )
         val mostViewedAdapter =
             activity?.let { MostViewedAdapter(it, mostViewedArrayList) }
-        schoolDisplay.adapter = mostViewedAdapter
-        val schoolslayoutManager =
-            LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-        val schools =
-            DividerItemDecoration(context, layoutManager.orientation)
-        val schoolAnimator: ItemAnimator = DefaultItemAnimator()
-        itemDisplay.itemAnimator = schoolAnimator
-        schoolDisplay.layoutManager = schoolslayoutManager
-        val toolbar =
-            view.findViewById<Toolbar>(R.id.toolbarfrag1)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            activity!!.setActionBar(toolbar)
-        }
+
+        view.rcvschools.adapter = mostViewedAdapter
+        val schoolslayoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        view.rcvschools.layoutManager = schoolslayoutManager
+
         return view
     }
 

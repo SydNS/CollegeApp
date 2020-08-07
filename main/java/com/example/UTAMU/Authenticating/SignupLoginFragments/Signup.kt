@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
@@ -19,7 +18,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.UTAMU.R
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.signup.view.*
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -33,23 +32,15 @@ class Signup : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.signup, container, false)
-        val signup_uname = view.findViewById<View>(R.id.signup_uname) as TextInputLayout
-        val signup_uname2 = view.findViewById<View>(R.id.signup_uname2) as TextInputLayout
-        val signup_uemail = view.findViewById<View>(R.id.signup_uemail) as TextInputLayout
-        val signup_residence = view.findViewById<View>(R.id.signup_residence) as TextInputLayout
-        val signup_upassword1 = view.findViewById<View>(R.id.signup_upassword1) as TextInputLayout
-        val signup_upassword2 = view.findViewById<View>(R.id.signup_upassword2) as TextInputLayout
 
-        val signupButton = view.findViewById<View>(R.id.signupButton) as Button
-        signupButton.setOnClickListener {
+        view.signupButton.setOnClickListener {
 
-
-            val firstname = signup_uname.editText!!.text.toString()
-            val lastname = signup_uname2.editText!!.text.toString()
-            val upassd = signup_upassword1.editText!!.text.toString()
-            val upassd2 = signup_upassword2.editText!!.text.toString()
-            val uemail = signup_uemail.editText!!.text.toString()
-            val residence = signup_residence.editText!!.text.toString()
+            val firstname = view.signup_uname.editText!!.text.toString()
+            val lastname = view.signup_uname2.editText!!.text.toString()
+            val upassd = view.signup_upassword1.editText!!.text.toString()
+            val upassd2 = view.signup_upassword2.editText!!.text.toString()
+            val uemail = view.signup_uemail.editText!!.text.toString()
+            val residence = view.signup_residence.editText!!.text.toString()
 
             if (firstname.isNotEmpty() and lastname.isNotEmpty() and residence.isNotEmpty() and upassd.isNotEmpty() and upassd2.isNotEmpty() and uemail.isNotEmpty()) {
                 if (upassd == upassd2) {

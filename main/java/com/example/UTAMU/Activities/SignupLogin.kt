@@ -1,26 +1,25 @@
 package com.example.UTAMU.Activities
 
-
+import android.os.Build
 import android.os.Bundle
-import android.view.View
+import android.view.WindowManager
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.viewpager.widget.ViewPager
 import com.example.UTAMU.Authenticating.SignupLoginFragments.SignupLoginTabAdapter
 import com.example.UTAMU.R
-import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_signup_login.*
 
 class SignupLogin : AppCompatActivity() {
+    @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup_login)
-        val tabLayout = findViewById<View>(R.id.tabs) as TabLayout
-        val toolbar =
-            findViewById<Toolbar>(R.id.toolbar)
-        //        setSupportActionBar(toolbar);
-        val viewPager =
-            findViewById<View>(R.id.viewLoginandSignup) as ViewPager
-        viewPager.adapter = SignupLoginTabAdapter(supportFragmentManager)
-        tabLayout.setupWithViewPager(viewPager)
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+        )
+
+        viewLoginandSignup.adapter = SignupLoginTabAdapter(supportFragmentManager)
+        tabs.setupWithViewPager(viewLoginandSignup)
     }
 }

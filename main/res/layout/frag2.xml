@@ -26,14 +26,6 @@
                     app:layout_collapseMode="pin"
                     app:title="@string/app_name" />
 
-<!--                <AdapterViewFlipper-->
-<!--                    android:id="@+id/newsFlipper"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="200dp"-->
-<!--                    android:layout_below="@id/toolbar"-->
-<!--                    android:background="@color/colorWhiteGrey" />-->
-
-
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/newsFlipper"
                     android:layout_width="match_parent"
@@ -41,13 +33,6 @@
                     android:layout_below="@id/toolbar"
                     android:layout_marginTop="4dp"
                     android:background="@color/colorWhiteGrey"/>
-
-<!--                    <com.google.android.material.tabs.TabLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        app:tabBackground="@drawable/tab_selector"-->
-<!--                        app:tabGravity="center"-->
-<!--                        app:tabIndicatorHeight="0dp" />-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -57,18 +42,18 @@
                     android:padding="6dp">
 
                     <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/newTab1"
+                        android:id="@+id/newTablayout1"
                         android:layout_width="match_parent"
                         android:layout_height="?actionBarSize"
                         android:background="@color/colorWhite"
                         app:tabTextColor="@color/colorBlack" />
 
                     <androidx.viewpager.widget.ViewPager
-                        android:id="@+id/newTab1ViewPager"
+                        android:id="@+id/newsViewPager1"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:layout_below="@id/newTab1"
                         android:background="@color/colorNavyBlue" />
+
                 </LinearLayout>
 
             </RelativeLayout>
@@ -97,7 +82,7 @@
                 android:layout_height="80dp"
                 android:gravity="center"
                 android:text="@string/anotherone"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/TabCategories"
@@ -109,7 +94,6 @@
                 android:id="@+id/TabCategoriesViewPager"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_below="@id/TabCategories"
                 android:background="@color/colorWhiteHint" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

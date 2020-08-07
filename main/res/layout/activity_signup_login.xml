@@ -14,24 +14,29 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="?attr/colorPrimary">
+            android:layout_height="260dp"
+            android:background="@color/cardRed">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <ImageView
+                    android:layout_marginTop="50dp"
                     android:id="@+id/logoimage"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/pluss"/>
+                    android:contentDescription="@string/descIcon"
+                    android:src="@drawable/college_icon_foreground" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_below="@id/logoimage"
-                    android:textSize="20dp"
+                    android:textColor="@color/cardWhite"
                     android:gravity="center"
                     android:layout_centerHorizontal="true"
+                    android:textSize="20sp"
                     android:text="@string/welcome"/>
             </RelativeLayout>
 
@@ -53,6 +58,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/appbarlayout" />
-
 
 </RelativeLayout>

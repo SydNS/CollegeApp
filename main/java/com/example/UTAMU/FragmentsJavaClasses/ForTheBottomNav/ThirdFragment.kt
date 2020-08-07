@@ -18,18 +18,15 @@ import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
-import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.UTAMU.AdaptersJavaClasses.RestApiRCVA
 import com.example.UTAMU.DataObjects.ForRest
 import com.example.UTAMU.R
 import com.example.UTAMU.SharePreforproject.Uerdetails
-import kotlinx.android.synthetic.main.frag3.*
-import okhttp3.internal.http.RequestLine.get
+import kotlinx.android.synthetic.main.activity_main3.view.*
 import org.json.JSONArray
-import org.json.JSONException
-import org.json.JSONObject
 import java.util.*
+import kotlin.collections.set
 
 class ThirdFragment : Fragment() {
     var db: SQLiteDatabase? = null
@@ -47,20 +44,15 @@ class ThirdFragment : Fragment() {
 //        val unamefrompref: String? = unamepref?.getValueString("KEY_NAME").toString()
         val tokenfrompref: String = unamepref?.getValueString("KEY_TOKEN").toString()
 
-        var requestQueue: RequestQueue? = null
-
         val view: View = inflater.inflate(R.layout.frag3, container, false)
         val forRestArrayList: ArrayList<ForRest> = ArrayList<ForRest>()
-        //        final TextView profName = (TextView) view.findViewById(R.id.profName);
-//        final Button showData = (Button) view.findViewById(R.id.showData);
-        val recyclerView =
-            view.findViewById<View>(R.id.profName) as RecyclerView
 
         val schoolslayoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        requestQueue = Volley.newRequestQueue(context)
+        val requestQueue: RequestQueue? = Volley.newRequestQueue(context)
 
         val credentials = tokenfrompref
+
         // Make a volley custom json object request with basic authentication
         val request = CustomJsonObjectRequestBasicAuth(Request.Method.GET, ROOT_URL, null,
             Response.Listener { response ->
@@ -76,8 +68,8 @@ class ThirdFragment : Fragment() {
                         forRestArrayList.add(ForRest(title, post, author))
                         val restApiRCVA =
                             activity?.let { RestApiRCVA(it, forRestArrayList) }
-                        recyclerView.adapter = restApiRCVA
-                        recyclerView.layoutManager = schoolslayoutManager
+                        view.profName.adapter = restApiRCVA
+                        view.profName.layoutManager = schoolslayoutManager
                     }
                     Toast.makeText(activity, "response.length()", Toast.LENGTH_SHORT)
                         .show()
@@ -94,7 +86,7 @@ class ThirdFragment : Fragment() {
                 println("e")
             }, credentials
         )
-        requestQueue.add(request)
+        requestQueue?.add(request)
 //        requestQueue.add(jsonObjectRequest)
 
         return view
