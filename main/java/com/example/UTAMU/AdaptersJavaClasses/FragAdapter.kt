@@ -1,9 +1,14 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.UTAMU.AdaptersJavaClasses
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.UTAMU.FragmentsJavaClasses.ForTheTabs.*
+import com.example.UTAMU.FragmentsJavaClasses.ForTheTabs.Tab1Fragment
+import com.example.UTAMU.FragmentsJavaClasses.ForTheTabs.Tab2Fragment
+import com.example.UTAMU.FragmentsJavaClasses.ForTheTabs.Tab3Fragment
+import com.example.UTAMU.FragmentsJavaClasses.ForTheTabs.Tab4Fragment
 
 class FragAdapter(fm: FragmentManager) :
     FragmentPagerAdapter(fm) {

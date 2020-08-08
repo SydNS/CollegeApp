@@ -14,18 +14,19 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarFrag4"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="?attr/actionBarSize"
             app:layout_scrollFlags="scroll|enterAlways" />
 
         <com.google.android.material.tabs.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
             android:id="@+id/tablayoutffrag4"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
             android:layout_gravity="bottom"
             app:tabTextColor="@color/colorBlack"
             android:background="@color/colorWhite"
-            android:textAlignment="center"/>
-        
+            android:textAlignment="center"
+            tools:ignore="RtlCompat" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager

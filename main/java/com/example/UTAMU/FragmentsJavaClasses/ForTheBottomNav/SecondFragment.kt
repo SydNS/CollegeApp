@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.UTAMU.AdaptersJavaClasses.Carousel
 import com.example.UTAMU.R
-import kotlinx.android.synthetic.main.frag2.*
 import kotlinx.android.synthetic.main.frag2.view.*
 
 class SecondFragment : Fragment() {
@@ -32,12 +31,13 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.frag2, container, false)
+
         val tabVieWPagers = TabVieWPagers(childFragmentManager)
         val carousel = Carousel(items, wtslideImages)
 
         view.newsFlipper?.adapter = carousel
         view.newsViewPager1?.adapter = tabVieWPagers
-        view.newTablayout1?.setupWithViewPager(newsViewPager1)
+        view.newTablayout1?.setupWithViewPager(view.newsViewPager1)
 
         return view
     }
