@@ -15,16 +15,18 @@
             android:foregroundGravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/walkslideImage"/>
+            android:id="@+id/walkslideImage"
+            android:contentDescription="image to display" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/walkslide"
             android:gravity="center"
-            android:textColor="@color/colorAcc2"
+            android:textColor="@color/colorAccent"
             android:layout_centerInParent="true"
             android:fontFamily="cursive"
-            android:textSize="15dp"/>
+            android:textSize="15sp" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

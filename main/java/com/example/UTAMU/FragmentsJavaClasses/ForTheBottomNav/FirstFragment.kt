@@ -1,6 +1,5 @@
 package com.example.UTAMU.FragmentsJavaClasses.ForTheBottomNav
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +12,6 @@ import com.example.UTAMU.AdaptersJavaClasses.MyAdapterViewFlippper
 import com.example.UTAMU.AdaptersJavaClasses.RCVForHorizontalDisplay
 import com.example.UTAMU.DataObjects.MostViewed
 import com.example.UTAMU.R
-import kotlinx.android.synthetic.main.frag1.*
 import kotlinx.android.synthetic.main.frag1.view.*
 import java.util.*
 
@@ -26,9 +24,9 @@ class FirstFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.frag1, container, false)
         val layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            activity!!.setActionBar(toolbarfrag1)
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            activity!!.setActionBar(toolbarfrag1 as Toolbar?)
+//        }
 
         val imageList = intArrayOf(
             R.drawable.astudio21,

@@ -3,7 +3,7 @@
 
     <item>
         <shape android:shape="line">
-            <stroke android:color="@color/colorBlack" android:width="2dp"/>
+            <stroke android:width="2dp" android:color="@color/colorAccent" />
         </shape>
     </item>
 </selector>

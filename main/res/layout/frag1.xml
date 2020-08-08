@@ -20,43 +20,12 @@
             android:layout_height="wrap_content"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-            <Toolbar
-                android:id="@+id/toolbarfrag1"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@color/colorWhite"
-                app:layout_scrollFlags="scroll|enterAlways">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <Button
-                        android:id="@+id/exitButton"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:background="@drawable/back_foreground" />
-
-                    <androidx.appcompat.widget.SearchView
-                        android:layout_width="240dp"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_margin="3dp"
-                        android:background="@drawable/searchbg"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="25dp" />
-
-                    <Button
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:background="@drawable/plus_foreground" />
-                </RelativeLayout>
-
-            </Toolbar>
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:title="@string/frag1" />
 
             <com.google.android.material.tabs.TabLayout
                 android:layout_width="match_parent"
@@ -121,11 +90,12 @@
                         android:padding="2dp"
                         android:text="@string/featuresGot"
                         android:textColor="@color/colorWhite"
-                        android:textSize="35dp" />
+                        android:textSize="35sp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_toEndOf="@id/featuresdesc"
                         android:layout_toRightOf="@id/featuresdesc">
 
                         <AdapterViewFlipper
@@ -172,12 +142,50 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-<!--    <com.google.android.material.navigation.NavigationView-->
-<!--        android:id="@+id/nav_view"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_gravity="start"-->
-<!--        app:headerLayout="@layout/nav_header"-->
-<!--        app:menu="@menu/nav_profile" />-->
 
-</RelativeLayout>
+</RelativeLayout><!--    <com.google.android.material.navigation.NavigationView-->
+    <!--        android:id="@+id/nav_view"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_gravity="start"-->
+    <!--        app:headerLayout="@layout/nav_header"-->
+    <!--        app:menu="@menu/nav_profile" />-->
+
+
+    <!--            <Toolbar-->
+    <!--                android:id="@+id/toolbarfrag1"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="45dp"-->
+    <!--                android:background="@color/colorWhite"-->
+    <!--                app:layout_scrollFlags="scroll|enterAlways">-->
+
+    <!--                <RelativeLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="match_parent">-->
+
+    <!--                    <Button-->
+    <!--                        android:id="@+id/exitButton"-->
+    <!--                        android:layout_width="40dp"-->
+    <!--                        android:layout_height="40dp"-->
+    <!--                        android:layout_alignParentStart="true"-->
+    <!--                        android:layout_alignParentLeft="true"-->
+    <!--                        android:background="@drawable/back_foreground" />-->
+
+    <!--                    <androidx.appcompat.widget.SearchView-->
+    <!--                        android:layout_width="240dp"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_centerInParent="true"-->
+    <!--                        android:layout_margin="3dp"-->
+    <!--                        android:background="@drawable/searchbg"-->
+    <!--                        android:textColor="@color/colorBlack"-->
+    <!--                        android:textSize="25dp" />-->
+
+    <!--                    <Button-->
+    <!--                        android:layout_width="40dp"-->
+    <!--                        android:layout_height="40dp"-->
+    <!--                        android:layout_alignParentEnd="true"-->
+    <!--                        android:layout_alignParentRight="true"-->
+    <!--                        android:background="@drawable/plus_foreground" />-->
+    <!--                </RelativeLayout>-->
+
+    <!--            </Toolbar>-->

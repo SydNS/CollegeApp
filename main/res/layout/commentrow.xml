@@ -15,7 +15,8 @@
         android:layout_columnWeight="1"
         android:layout_margin="1dp"
         android:paddingRight="1dp"
-        app:cardBackgroundColor="@color/cardBlack"
+        android:paddingEnd="1dp"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
         app:cardElevation="0dp">
 
         <RelativeLayout
@@ -33,8 +34,8 @@
                 android:gravity="start"
                 android:padding="2dp"
                 android:textAlignment="textStart"
-                android:textColor="@color/cardWhite"
-                android:textSize="15dp" />
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
 
             <TextView
 
@@ -46,8 +47,8 @@
                 android:layout_marginBottom="10dp"
                 android:gravity="bottom|start"
                 android:text="@string/app_name"
-                android:textColor="@color/cardWhite"
-                android:textSize="10dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="10sp"
                 android:textStyle="normal" />
 
             <TextView
@@ -63,9 +64,9 @@
                 android:layout_toRightOf="@id/commentorsname"
                 android:gravity="bottom|end"
                 android:text="@string/app_name"
-                android:textColor="@color/cardWhite"
+                android:textColor="@color/colorAccent"
 
-                android:textSize="10dp"
+                android:textSize="10sp"
                 android:textStyle="normal" />
 
         </RelativeLayout>

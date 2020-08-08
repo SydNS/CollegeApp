@@ -11,6 +11,6 @@
         android:layout_height="100dp"
         android:id="@+id/itemmtv"
         android:gravity="center"
-        android:background="@color/colorAcc"/>
+        android:background="@color/colorAccent" />
 
 </androidx.cardview.widget.CardView>

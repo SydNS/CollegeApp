@@ -59,6 +59,11 @@
 
     <string name="frag2">Frag2</string>
     <string name="frag3">Frag3</string>
+    <string name="frag1">Frag1</string>
+    <string name="author">Author</string>
+    <string name="title">Title</string>
+    <string name="Subtitle">Subtitle</string>
+    <string name="Post">Post</string>
 
 
 </resources>

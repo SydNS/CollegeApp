@@ -18,9 +18,9 @@
 
     <style name="makingPoststyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/cardWhite</item>
-        <item name="boxStrokeColor">@color/cardBlack</item>
-        <item name="boxBackgroundColor">@color/cardWhite</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxBackgroundColor">@color/colorPrimary</item>
         <item name="boxStrokeWidth">1dp</item>
         <item name="boxStrokeWidthFocused">1dp</item>
         <item name="android:gravity">top|start</item>
@@ -28,15 +28,15 @@
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:inputType">text</item>
-        <item name="hintTextColor">@color/cardBlack</item>
+        <item name="hintTextColor">@color/colorPrimary</item>
         <item name="android:textSize">15sp</item>
     </style>
 
     <style name="AddingPosts" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/cardWhite</item>
-        <item name="boxStrokeColor">@color/cardWhite</item>
-        <item name="boxBackgroundColor">@color/cardText</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxBackgroundColor">@color/colorPrimary</item>
         <item name="boxStrokeWidth">1dp</item>
         <item name="boxStrokeWidthFocused">1dp</item>
         <item name="android:gravity">top|start</item>
@@ -44,7 +44,7 @@
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:inputType">text</item>
-        <item name="hintTextColor">@color/cardWhite</item>
+        <item name="hintTextColor">@color/colorPrimary</item>
         <item name="android:textSize">15sp</item>
     </style>
 
@@ -54,7 +54,7 @@
     <!--    Buttons-->
     <style name="MyButtons" parent="Widget.AppCompat.Button">
         <item name="android:layout_centerHorizontal">true</item>
-        <item name="android:textColor">@color/cardWhite</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:layout_width">340dp</item>
         <item name="android:layout_height">60dp</item>
         <item name="android:layout_marginTop">20dp</item>
@@ -63,7 +63,7 @@
 
     <!--    Buttons for signing up with SocialMedia facebook-->
     <style name="MyButtonSocialMediaFacebook" parent="Widget.AppCompat.Button">
-        <item name="android:textColor">@color/cardWhite</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:layout_width">160dp</item>
         <item name="android:layout_height">60dp</item>
         <item name="android:layout_marginTop">5dp</item>
@@ -75,7 +75,7 @@
 
     <!--    Buttons for signing up with SocialMedia Gmail-->
     <style name="MyButtonSocialMediaGmail" parent="Widget.AppCompat.Button">
-        <item name="android:textColor">@color/cardWhite</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:layout_width">160dp</item>
         <item name="android:layout_height">60dp</item>
         <item name="android:layout_marginTop">5dp</item>
@@ -110,7 +110,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">20sp</item>
         <item name="android:layout_centerHorizontal">true</item>
-        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <!--    WalkhtroughPageDesc styles-->
@@ -126,7 +126,7 @@
         <item name="android:textStyle">normal</item>
         <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-light</item>
         <item name="android:layout_centerHorizontal">true</item>
-        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textColor">@color/colorAccent</item>
         <!--        <item name="android:fontFamily" tools:targetApi="jelly_bean">cursive</item>-->
     </style>
 

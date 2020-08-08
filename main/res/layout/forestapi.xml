@@ -15,7 +15,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="1dp"
             android:paddingRight="1dp"
-            app:cardBackgroundColor="@color/cardBlack"
+            app:cardBackgroundColor="@color/colorAccent"
             app:cardElevation="0dp">
 
             <RelativeLayout
@@ -26,17 +26,17 @@
                 android:layout_margin="5dp">
 
                 <TextView
-                    android:textColor="@color/cardWhite"
+                    android:textColor="@color/colorPrimary"
                     android:id="@+id/title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="start"
                     android:padding="2dp"
                     android:textAlignment="textStart"
-                    android:textSize="10dp" />
+                    android:textSize="10sp" />
 
                 <TextView
-                    android:textColor="@color/cardWhite"
+                    android:textColor="@color/colorPrimaryDark"
                     android:id="@+id/post"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -46,11 +46,11 @@
                     android:layout_marginBottom="31dp"
                     android:gravity="start"
                     android:text="@string/app_name"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
                     android:textStyle="normal" />
 
                 <TextView
-                    android:textColor="@color/cardWhite"
+                    android:layout_alignParentStart="true"
                     android:gravity="start"
                     android:id="@+id/author"
                     android:layout_width="150dp"
@@ -60,7 +60,8 @@
                     android:layout_marginTop="1dp"
                     android:layout_marginBottom="10dp"
                     android:text="@string/app_name"
-                    android:textSize="10dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="10sp"
                     android:textStyle="normal" />
                 <TextView
                     android:gravity="start"
@@ -74,9 +75,12 @@
                     android:layout_marginLeft="90dp"
                     android:layout_marginBottom="10dp"
                     android:text="@string/app_name"
-                    android:textSize="10dp"
+                    android:layout_alignParentEnd="true"
                     android:textStyle="normal"
-                    android:textColor="@color/cardWhite"/>
+                    android:layout_marginStart="90dp"
+                    android:layout_toEndOf="@id/author"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="10sp" />
 
             </RelativeLayout>
 
