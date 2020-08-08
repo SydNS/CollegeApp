@@ -37,8 +37,7 @@ class HomeActivity : AppCompatActivity() {
                 .replace(R.id.activitymain, selectedFragment!!).commit()
             true
         }
-        //        Toolbar toolbar= (Toolbar) findViewById(R.id.toolbarMainActivity);
-//        setSupportActionBar(toolbar);
+
     }
 
     override fun onBackPressed() {

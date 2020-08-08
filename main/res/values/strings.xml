@@ -57,5 +57,8 @@
     <string name="anotherone">another one</string>
     <string name="descIcon">App-Icon</string>
 
+    <string name="frag2">Frag2</string>
+    <string name="frag3">Frag3</string>
+
 
 </resources>

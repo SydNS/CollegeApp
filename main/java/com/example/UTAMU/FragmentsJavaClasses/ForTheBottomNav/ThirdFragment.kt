@@ -3,7 +3,6 @@ package com.example.UTAMU.FragmentsJavaClasses.ForTheBottomNav
 import android.Manifest
 import android.app.AlertDialog
 import android.content.pm.PackageManager
-import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,12 +28,9 @@ import java.util.*
 import kotlin.collections.set
 
 class ThirdFragment : Fragment() {
-    var db: SQLiteDatabase? = null
 
-    //
     private val INTERNET_PERMISSION_CODE = 1
 
-    //    var requestQueue: RequestQueue? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

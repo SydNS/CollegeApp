@@ -11,11 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/appbarfrag4">
-        <androidx.appcompat.widget.Toolbar
+
+        <include
             android:id="@+id/toolbarFrag4"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlways" />
+            layout="@layout/universal_toolbar" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tablayoutffrag4"
