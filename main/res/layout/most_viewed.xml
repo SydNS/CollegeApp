@@ -47,7 +47,7 @@ app:cardCornerRadius="20dp">
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:gravity="center_horizontal"
-                android:textSize="15dp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/DescView"
@@ -57,7 +57,7 @@ app:cardCornerRadius="20dp">
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:gravity="start"
-                android:textSize="10dp" />
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/SchoolView"
@@ -67,7 +67,7 @@ app:cardCornerRadius="20dp">
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="1dp"
                 android:gravity="start"
-                android:textSize="10dp" />
+                android:textSize="10sp" />
 
         </RelativeLayout>
 

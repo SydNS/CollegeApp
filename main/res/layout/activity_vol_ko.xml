@@ -9,7 +9,7 @@
     tools:context=".Activities.VolKo"
     android:background="#fdfdfc">
     <Button
-        android:text="Run Volley"
+        android:text="@string/run_volley"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btn"

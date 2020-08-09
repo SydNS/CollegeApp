@@ -64,6 +64,10 @@
     <string name="title">Title</string>
     <string name="Subtitle">Subtitle</string>
     <string name="Post">Post</string>
+    <string name="this_is_the_top_frag">this is the top frag</string>
+    <string name="todo">TODO</string>
+    <string name="run_volley">Run Volley</string>
+    <string name="string_img1text2">string/img1text2</string>
 
 
 </resources>
