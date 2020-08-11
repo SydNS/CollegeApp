@@ -13,6 +13,16 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+
+    </style>
+
+    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
+        <!-- Customize your theme here. -->
+        <item name="android:activityOpenEnterAnimation">@anim/activity_slide_animation_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_slide_animation_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_slide_animation_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_slide_animation_exit</item>
 
     </style>
 
