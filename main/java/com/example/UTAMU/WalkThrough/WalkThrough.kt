@@ -10,13 +10,17 @@ import androidx.viewpager2.widget.ViewPager2
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.example.UTAMU.Activities.SignupLogin
 import com.example.UTAMU.R
+import com.example.UTAMU.SharePreforproject.RememberMe
 import kotlinx.android.synthetic.main.activity_walk_through.*
 
 class WalkThrough : AppCompatActivity() {
     private val items = listOf(
-        "Mon 6/23 - Sunny - 31/17",
-        "Tue 6/24 - Foggy - 21/8",
-        "Wed 6/25 - Cloudy - 22/17",
+        "Unfortunately, there’s no Raid or Roach Motel (like the ad sadis-\n" +
+                "tically says,",
+        " “They check in, but they don’t check out”) for the\\n\" +\n" +
+                "                \"butterflies in your tummy.",
+        "Even in this small microcosm, the adage\n" +
+                "“we are what we think the world thinks we are” seemed to reign.",
         "Thurs 6/26 - Rainy - 18/11"
     )
     private val wtslideImages =
@@ -26,6 +30,8 @@ class WalkThrough : AppCompatActivity() {
             R.drawable.sld2,
             R.drawable.astudio52
         )
+
+    var rememberMe: RememberMe = RememberMe(applicationContext)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,13 +44,14 @@ class WalkThrough : AppCompatActivity() {
 
         //buttons
         nextbutton.setOnClickListener {
-            walkthroughvp.currentItem = walkthroughvp.currentItem + 1
+            walkthroughvp.currentItem += 1
         }
 
         skipbutton.setOnClickListener {
             walkthroughvp.currentItem=items.size-1
         }
         startbutton.setOnClickListener {
+            rememberMe.writeInstalled()
             startActivity(Intent(this, SignupLogin::class.java))
             finish()
         }
@@ -64,9 +71,6 @@ class WalkThrough : AppCompatActivity() {
                 Log.e("Selected_Page", position.toString())
             }
 
-            override fun onPageScrollStateChanged(state: Int) {
-                super.onPageScrollStateChanged(state)
-            }
         })
 
 
