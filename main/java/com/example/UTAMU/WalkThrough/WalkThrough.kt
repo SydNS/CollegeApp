@@ -10,7 +10,7 @@ import androidx.viewpager2.widget.ViewPager2
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.example.UTAMU.Activities.SignupLogin
 import com.example.UTAMU.R
-import com.example.UTAMU.SharePreforproject.RememberMe
+import com.example.UTAMU.SharePreforproject.IsItTheAppsFirstTimeOpenning
 import kotlinx.android.synthetic.main.activity_walk_through.*
 
 class WalkThrough : AppCompatActivity() {
@@ -31,12 +31,13 @@ class WalkThrough : AppCompatActivity() {
             R.drawable.astudio52
         )
 
-    var rememberMe: RememberMe = RememberMe(applicationContext)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_walk_through)
 
+        val isItTheAppsFirstTimeOpenning: IsItTheAppsFirstTimeOpenning =
+            IsItTheAppsFirstTimeOpenning(applicationContext)
         val walkthroughvp = walkthroughvp as ViewPager2
         walkthroughvp.adapter =
             WalkthroughAdapter(items, wtslideImages)
@@ -51,7 +52,7 @@ class WalkThrough : AppCompatActivity() {
             walkthroughvp.currentItem=items.size-1
         }
         startbutton.setOnClickListener {
-            rememberMe.writeInstalled()
+            isItTheAppsFirstTimeOpenning.writeInstalled()
             startActivity(Intent(this, SignupLogin::class.java))
             finish()
         }

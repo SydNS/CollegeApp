@@ -36,7 +36,7 @@ class ThirdFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val unamepref= activity?.let { Uerdetails(it) }
+        val unamepref = activity?.let { Uerdetails(it) }
 //        val unamefrompref: String? = unamepref?.getValueString("KEY_NAME").toString()
         val tokenfrompref: String = unamepref?.getValueString("KEY_TOKEN").toString()
 
@@ -89,7 +89,7 @@ class ThirdFragment : Fragment() {
     }
 
     // Class to make a volley json object request with basic authentication
-class CustomJsonObjectRequestBasicAuth(
+    class CustomJsonObjectRequestBasicAuth(
         method: Int, url: String,
         jsonArray: JSONArray?,
         listener: Response.Listener<JSONArray>,

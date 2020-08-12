@@ -35,7 +35,6 @@ class Login : Fragment() {
             val upasswd = loginpasswd.editText!!.text.toString()
             posting(uname, upasswd)
 
-
         }
         return view
     }

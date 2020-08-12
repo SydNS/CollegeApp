@@ -1,6 +1,7 @@
 package com.example.UTAMU.Activities
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -10,8 +11,11 @@ import com.example.UTAMU.FragmentsJavaClasses.ForTheBottomNav.SecondFragment
 import com.example.UTAMU.FragmentsJavaClasses.ForTheBottomNav.ThirdFragment
 import com.example.UTAMU.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.homeactivity.*
 
-class HomeActivity : AppCompatActivity() {
+
+class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     var bottomNavigationView: BottomNavigationView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +23,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.homeactivity)
         //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 //        startActivity(new Intent(MainActivity.this,SplashIntro.class));
-//        window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+//        window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         supportFragmentManager.beginTransaction().replace(R.id.activitymain, FirstFragment())
             .commit()
         setTitle(R.string.app_name)
@@ -38,6 +42,9 @@ class HomeActivity : AppCompatActivity() {
             true
         }
 
+        nav_view.setNavigationItemSelectedListener(this)
+
+
     }
 
     override fun onBackPressed() {
@@ -47,4 +54,10 @@ class HomeActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        TODO("Not yet implemented")
+    }
+
+
 }
