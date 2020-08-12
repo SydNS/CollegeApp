@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.CheckBox
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.android.volley.NoConnectionError
@@ -16,8 +14,9 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.UTAMU.Activities.HomeActivity
 import com.example.UTAMU.R
+import com.example.UTAMU.SharePreforproject.RememberMe
 import com.example.UTAMU.SharePreforproject.Uerdetails
-import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.login.*
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -30,19 +29,13 @@ class Login : Fragment() {
     ): View? {
         val view: View = inflater.inflate(R.layout.login, container, false)
 
-        val loginButton = view.findViewById<View>(R.id.loginButton) as Button
-        val loginuname = view.findViewById<View>(R.id.loginuname) as TextInputLayout
-        val loginpasswd = view.findViewById<View>(R.id.loginpasswd) as TextInputLayout
-        val rememberme = view.findViewById<View>(R.id.rememberme) as CheckBox
-
+//
         loginButton.setOnClickListener {
             val uname = loginuname.editText!!.text.toString()
             val upasswd = loginpasswd.editText!!.text.toString()
             posting(uname, upasswd)
 
-            if (rememberme.isChecked) {
-                Toast.makeText(activity, "You'll be remembered", Toast.LENGTH_SHORT).show()
-            }
+
         }
         return view
     }
@@ -69,6 +62,13 @@ class Login : Fragment() {
                             Toast.makeText(activity, "loggedin", Toast.LENGTH_SHORT).show()
                             val unamepref = activity?.let { it1 -> Uerdetails(it1) }
                             unamepref?.save(uname, loggedin)
+
+                            if (rememberme.isChecked) {
+                                activity?.let { RememberMe(it).remember(uname, loggedin) }
+                                Toast.makeText(activity, "You'll be remembered", Toast.LENGTH_SHORT)
+                                    .show()
+                            }
+
                             startActivity(Intent(activity, HomeActivity::class.java))
                             activity?.finish()
                         }
