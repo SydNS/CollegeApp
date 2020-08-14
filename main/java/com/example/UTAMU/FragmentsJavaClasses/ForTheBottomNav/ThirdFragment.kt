@@ -39,6 +39,7 @@ class ThirdFragment : Fragment() {
         val unamepref = activity?.let { Uerdetails(it) }
 //        val unamefrompref: String? = unamepref?.getValueString("KEY_NAME").toString()
         val tokenfrompref: String = unamepref?.getValueString("KEY_TOKEN").toString()
+        val credentials = tokenfrompref
 
         val view: View = inflater.inflate(R.layout.frag3, container, false)
         val forRestArrayList: ArrayList<ForRest> = ArrayList<ForRest>()
@@ -47,7 +48,6 @@ class ThirdFragment : Fragment() {
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         val requestQueue: RequestQueue? = Volley.newRequestQueue(context)
 
-        val credentials = tokenfrompref
 
         // Make a volley custom json object request with basic authentication
         val request = CustomJsonObjectRequestBasicAuth(Request.Method.GET, ROOT_URL, null,
@@ -150,7 +150,7 @@ class ThirdFragment : Fragment() {
     }
 
     companion object {
-        private const val ROOT_URL = "http://192.168.43.87:5000/utamuapi/newsposts"
+        const val ROOT_URL = "http://192.168.43.87:5000/utamuapi/newsposts"
 //        private const val ROOT_URL = "http://192.168.43.87:5000/api_posts"
 //        private const val REGISTER = "http://192.168.43.87/Android/v1/user.php"
     }
