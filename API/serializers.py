@@ -82,6 +82,7 @@ class NewsPostsSerializers(serializers.ModelSerializer):
 
 
 class CarouselDisplaySerializers(serializers.ModelSerializer):
+    image=serializers.ImageField(use_url=True)
     class Meta:
         model = CarouselDisplay
         fields = ['title', 'image', 'body', 'creationDate']

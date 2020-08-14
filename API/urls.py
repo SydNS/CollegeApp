@@ -21,5 +21,3 @@ urlpatterns = [
     path("login/", LoginView.as_view(), name="login"),
     path("obtain/", views.obtain_auth_token, name="obtain")
 ]
-
-# path('createusers/', SysUserCreation.as_view(), name='createusers')

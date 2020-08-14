@@ -10,6 +10,7 @@ from django.utils import timezone
 from rest_framework.authtoken.models import Token
 
 from django.conf.global_settings import MEDIA_ROOT
+from rest_framework.settings import api_settings
 
 
 class UtamuAccount(models.Model):
@@ -134,10 +135,9 @@ class NewsPosts(models.Model):
 class CarouselDisplay(models.Model):
     title = models.CharField(max_length=20)
     body = models.TextField(max_length=100000)
-    image = models.FileField(upload_to=MEDIA_ROOT, null=True, blank=False)
+    image = models.ImageField(upload_to="images/%Y/%b/%a/%d/%H/%M", null=True, blank=False)
     creationDate = models.DateTimeField(default=timezone.now)
 
-    #
     def __str__(self):
         return self.title
 
